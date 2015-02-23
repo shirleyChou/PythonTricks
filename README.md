@@ -27,14 +27,40 @@ sorted(iterable, cmp=None, key=None, reverse=False)
 
 **参数**：  
 * iterable：是可迭代类型；  
-* cmp(e1, e2) 是带两个参数的比较函数, 返回值: 负数: e1 < e2, 0: e1 == e2, 正数: e1 > e2. 默认为 None, 即用内建的比较函数； 
-* key(e) 是带一个参数的函数, 用来为每个元素提取比较值. 默认为 None, 即直接比较每个元素；  
-* reverse：排序规则. reverse = True 或者 reverse = False，有默认值。  
+* cmp(e1, e2) 是带两个参数的比较函数， 返回值： 负数: e1 < e2, 0: e1 == e2， 正数： e1 > e2。 默认为 None， 即用内建的比较函数； 
+* key(e) 是带一个参数的函数， **用来为每个元素提取比较值**。 默认为 None， 即直接比较每个元素；  
+* reverse：排序规则。 reverse = True 或者 reverse = False，有默认值。  
 * 返回值：是一个经过排序的可迭代类型，与iterable一样。  
 **注：一般来说，cmp和key可以使用lambda表达式。**  
 **注：通常, key 和 reverse 比 cmp 快很多, 因为对每个元素它们只处理一次; 而 cmp 会处理多次。**
 
 
+例子：
+>Sorting  cmp:
+```Python
+>>>L = [('b',2),('a',1),('c',3),('d',4)]
+>>>print sorted(L, cmp=lambda x,y:cmp(x[1],y[1]))
+[('a', 1), ('b', 2), ('c', 3), ('d', 4)]
+```
+>Sorting  keys:
+```Python
+>>>L = [('b',2),('a',1),('c',3),('d',4)]
+>>>print sorted(L, key=lambda x:x[1]))
+[('a', 1), ('b', 2), ('c', 3), ('d', 4)]
+```
+>如果我们想用第二个关键字排过序后再用第一个关键字进行排序
+```Python
+>>> L = [('d',2),('a',4),('b',3),('c',2)]
+>>> print sorted(L, key=lambda x:(x[1],x[0]))
+>>>[('c', 2), ('d', 2), ('b', 3), ('a', 4)]
+```
+>Sorting  reverse:
+```Python
+>>> print sorted([5, 2, 3, 1, 4], reverse=True)
+[5, 4, 3, 2, 1]
+>>> print sorted([5, 2, 3, 1, 4], reverse=False)
+[1, 2, 3, 4, 5]
+```
 
 <br>
 
