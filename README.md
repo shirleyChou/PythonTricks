@@ -30,6 +30,30 @@ List.sort(cmp=None, key=None, reverse=False)
 sorted(iterable, cmp=None, key=None, reverse=False) 
 ```
 
+###<a name="3"/>用dict实现switch..case语法
+PHP中的switch..case语句：
+```PHP
+ switch ($value) {
+     case 'a':
+         $result = $x * 5;
+         break;
+     case 'b':
+         $result = $x + 7;
+         break;
+     case 'c':
+         $result = $x - 2;
+         break;
+ }
+ ```
+ Python的等价实现为：
+ ```Python
+ result = {
+   'a': lambda x: x * 5,
+   'b': lambda x: x + 7,
+   'c': lambda x: x - 2
+ }[value](x)
+```
+
 
 
 
