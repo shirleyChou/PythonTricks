@@ -61,8 +61,28 @@ PHP中的switch..case语句：
    'c': lambda x: x - 2
  }[value](x)
 ```
-
-
+例子：
+>题目：Given a roman numeral, convert it to an integer.
+Input is guaranteed to be within the range from 1 to 3999.
+```Python
+def romanToInt(s):
+    dic = {'I': lambda i: -1 if s[i + 1] in ['V', 'X'] else 1,
+           'X': lambda i: -10 if s[i + 1] in ['L', 'C'] else 10,
+           'C': lambda i: -100 if s[i + 1] in ['D', 'M'] else 100,
+           'V': lambda i: 5,
+           'L': lambda i: 50,
+           'D': lambda i: 500,
+           'M': lambda i: 1000}
+    total = 0
+    s += '@'
+    for index, char in enumerate(s[:-1]):
+        total += dic[char](index)
+    return total
+```
+解释：
+1. char与dict.keys()对应，匿名函数接收one argument(which pass by index)，然后由匿名函数做出判断并返回一个integer
+2. `为什么题目说保证input within the range from 1 to 3999？`
+因为典型的罗马数字只有字母，超过4000的都要另外加非字母符号，例如小括号或者一横杠在字母上面。eg. (IV) = 4000
 
 
 
