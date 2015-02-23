@@ -16,7 +16,7 @@
 75
 ```
 
-###<a name="2"/>_sorted(List) & L.sort()
+###<a name="2"/>sorted(List) & L.sort()
 ```Python
 List.sort(cmp=None, key=None, reverse=False) 
 ```
