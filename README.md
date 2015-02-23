@@ -15,6 +15,7 @@
 >>> (54).__add__(21)
 75
 ```
+<br>
 
 ###<a name="2"/>sorted(List) & L.sort()
 ```Python
