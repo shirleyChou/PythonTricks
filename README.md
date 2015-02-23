@@ -80,8 +80,8 @@ def romanToInt(s):
         total += dic[char](index)
     return total
 ```
-解释：
-1. char与dict.keys()对应，匿名函数接收one argument(which pass by index)，然后由匿名函数做出判断并返回一个integer
+解释：      
+1. char与dict.keys()对应，匿名函数接收one argument(which pass by index)，然后由匿名函数做出判断并返回一个integer。      
 2. `为什么题目说保证input within the range from 1 to 3999？`  
 因为典型的罗马数字只有字母，超过4000的都要另外加非字母符号，例如小括号或者一横杠在字母上面。eg. (IV) = 4000
 
