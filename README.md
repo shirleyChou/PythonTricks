@@ -29,6 +29,7 @@ List.sort(cmp=None, key=None, reverse=False)
 ```Python
 sorted(iterable, cmp=None, key=None, reverse=False) 
 ```
+<br>
 
 ###<a name="3"/>用dict实现switch..case语法
 PHP中的switch..case语句：
