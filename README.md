@@ -35,33 +35,33 @@ sorted(iterable, cmp=None, key=None, reverse=False)
 **注：通常, key 和 reverse 比 cmp 快很多, 因为对每个元素它们只处理一次; 而 cmp 会处理多次。**
 
 
-例子：
->Sorting  cmp:
+**例子**：
+Sorting  cmp:
 ```Python
 >>>L = [('b',2),('a',1),('c',3),('d',4)]
 >>>print sorted(L, cmp=lambda x,y:cmp(x[1],y[1]))
 [('a', 1), ('b', 2), ('c', 3), ('d', 4)]
 ```
->Sorting  keys:
+Sorting  keys:
 ```Python
 >>>L = [('b',2),('a',1),('c',3),('d',4)]
 >>>print sorted(L, key=lambda x:x[1]))
 [('a', 1), ('b', 2), ('c', 3), ('d', 4)]
 ```
 >如果我们想用第二个关键字排过序后再用第一个关键字进行排序
+
 ```Python
 >>> L = [('d',2),('a',4),('b',3),('c',2)]
 >>> print sorted(L, key=lambda x:(x[1],x[0]))
 >>>[('c', 2), ('d', 2), ('b', 3), ('a', 4)]
 ```
->Sorting  reverse:
+Sorting  reverse:
 ```Python
 >>> print sorted([5, 2, 3, 1, 4], reverse=True)
 [5, 4, 3, 2, 1]
 >>> print sorted([5, 2, 3, 1, 4], reverse=False)
 [1, 2, 3, 4, 5]
 ```
-
 <br>
 
 ###<a name="3"/>用dict实现switch..case语法
