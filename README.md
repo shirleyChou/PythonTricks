@@ -16,4 +16,17 @@
 75
 ```
 
+###<a name="2"/>_sorted(List) & L.sort()
+```Python
+List.sort(cmp=None, key=None, reverse=False) 
+```
+>sort()是list的method，对于一个无序的列表a，调用a.sort()，对a进行排序后返回a。
+
+```Python
+sorted(iterable, cmp=None, key=None, reverse=False) 
+```
+sorted()是Python的built-in function，而对于同样一个无序的列表a，调用sorted(a)，对a进行排序后返回一个新的列表，而对a不产生影响。
+
+
+
 
