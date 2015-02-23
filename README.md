@@ -31,7 +31,7 @@ sorted(iterable, cmp=None, key=None, reverse=False)
 * key(e) 是带一个参数的函数, 用来为每个元素提取比较值. 默认为 None, 即直接比较每个元素；  
 * reverse：排序规则. reverse = True 或者 reverse = False，有默认值。  
 * 返回值：是一个经过排序的可迭代类型，与iterable一样。  
-**注；一般来说，cmp和key可以使用lambda表达式。**  
+**注：一般来说，cmp和key可以使用lambda表达式。**  
 **注：通常, key 和 reverse 比 cmp 快很多, 因为对每个元素它们只处理一次; 而 cmp 会处理多次。**
 
 
@@ -64,6 +64,7 @@ PHP中的switch..case语句：
 例子：
 >题目：Given a roman numeral, convert it to an integer.
 Input is guaranteed to be within the range from 1 to 3999.
+
 ```Python
 def romanToInt(s):
     dic = {'I': lambda i: -1 if s[i + 1] in ['V', 'X'] else 1,
@@ -81,7 +82,7 @@ def romanToInt(s):
 ```
 解释：
 1. char与dict.keys()对应，匿名函数接收one argument(which pass by index)，然后由匿名函数做出判断并返回一个integer
-2. `为什么题目说保证input within the range from 1 to 3999？`
+2. `为什么题目说保证input within the range from 1 to 3999？`  
 因为典型的罗马数字只有字母，超过4000的都要另外加非字母符号，例如小括号或者一横杠在字母上面。eg. (IV) = 4000
 
 
