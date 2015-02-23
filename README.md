@@ -35,7 +35,7 @@ sorted(iterable, cmp=None, key=None, reverse=False)
 **注：通常, key 和 reverse 比 cmp 快很多, 因为对每个元素它们只处理一次; 而 cmp 会处理多次。**
 
 
-**例子**：
+**例子**：        
 Sorting  cmp:
 ```Python
 >>>L = [('b',2),('a',1),('c',3),('d',4)]
