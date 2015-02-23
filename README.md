@@ -5,4 +5,6 @@
 
 ## <a name="index"/>目录
 * [__add__](#1)
+* [sorted(List) & L.sort()](#2)
+* [用dict实现switch..case语法](#3)
 
