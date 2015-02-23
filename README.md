@@ -31,8 +31,11 @@ sorted(iterable, cmp=None, key=None, reverse=False)
 * key(e) 是带一个参数的函数, 用来为每个元素提取比较值. 默认为 None, 即直接比较每个元素；  
 * reverse：排序规则. reverse = True 或者 reverse = False，有默认值。  
 * 返回值：是一个经过排序的可迭代类型，与iterable一样。  
-* 注；一般来说，cmp和key可以使用lambda表达式。  
-* 注：通常, key 和 reverse 比 cmp 快很多, 因为对每个元素它们只处理一次; 而 cmp 会处理多次。  
+**注；一般来说，cmp和key可以使用lambda表达式。**  
+**注：通常, key 和 reverse 比 cmp 快很多, 因为对每个元素它们只处理一次; 而 cmp 会处理多次。**
+
+
+
 <br>
 
 ###<a name="3"/>用dict实现switch..case语法
