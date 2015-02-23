@@ -8,3 +8,12 @@
 * [sorted(List) & L.sort()](#2)
 * [用dict实现switch..case语法](#3)
 
+###<a name="1"/>__add__
+>代码
+```Python
+>>> (54).__add__(21)
+75
+
+```
+
+
