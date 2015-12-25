@@ -95,11 +95,11 @@ class Connection(object):
   
   
   class Stack(object):
-  "A well-known data structure..."
-  def __init__(self):
+      "A well-known data structure..."
+      def __init__(self):
           self.items = []
   
-  def push(self, x):
+      def push(self, x):
           self.items.append(x)
   
       def pop(self):
@@ -107,9 +107,10 @@ class Connection(object):
           del self.items[-1]
           return x
   
-  def empty(self):
+      def empty(self):
           return len(self.items) == 0
-    
+  
+  
   class FancyStack(Stack): 
       """stack with added ability to inspect inferior stack items"""
   
