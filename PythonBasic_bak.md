@@ -91,11 +91,11 @@ class Connection(object):
   | **\_\_str__( self )**        | **Printable string representation. Sample Call: str(obj)** |
   | **\_\_cmp__ ( self, x )**    | **Object comparison. Sample Call: cmp(obj, x)** |
   
-  ​
-  
-* class_and_inheritance.py
-  
+
   ``` python
+  # class_and_inheritance.py
+  
+  
   class Stack(object):
   "A well-known data structure..."
   def __init__(self):
@@ -139,64 +139,34 @@ class Connection(object):
       def push(self, x):
           assert len(self.items) < self.limit
           FancyStack.push(self, x)    # "super" method call
-  ```
-
-​    class LimitedStack(FancyStack):    
-
-``` 
-
-
-  class FancyStack(Stack):
-
-​``` python
-
-​```
-
-  class LimitedStack(FancyStack):
-
-​``` python
-
-​```
-
+          
   f = FancyStack()
-
   l = LimitedStack(2)
 
   print hasattr(f, 'items')   # True   
-
   print hasattr(l, 'items')   # True
-
   print getattr(l, 'limit')   # 2
+  # also delattr, setattr
+  
 
-# also delattr, setattr
-
-
-
-# docstring of the class
-
+  # docstring of the class
   print "LimitedStack.__doc__:", LimitedStack.__doc__     
-
   print "FancyStack.__dict__:", FancyStack.__dict__
-
   print "LimitedStack.__name__:", LimitedStack.__name__    # LimitedStack
-
-# Module name in which the class is defined. This attribute is "__main__" in interactive mode.
-
+  # Module name in which the class is defined. This attribute is "__main__" in interactive mode.
   print "LimitedStack.__module__:", LimitedStack.__module__   # __main__
+  # Containing the base class
+  print "LimitedStack.__bases__:", LimitedStack.__bases__
+  
 
-# Containing the base class
-
-  print "LimitedStack.__bases__:", LimitedStack.__bases__  
-
-
-
-# the function of __repr__ and __str__
-
+  # the function of __repr__ and __str__
   print repr(l)   # __repr__: LimitedStack
-
   print str(l)    # __str__: LimitedStack
-
   print l         # __str__: LimitedStack
+  
+  
+  
+  ```
 
 
 
