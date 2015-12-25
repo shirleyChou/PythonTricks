@@ -60,7 +60,6 @@ class Connection(object):
   
 * **object**: Aunique instance of a data structure that's defined by its class. An objectcomprises both data members (class variables and instance variables) andmethods.
   
-  ​
   
 * **[super()](http://stackoverflow.com/questions/222877/how-to-use-super-in-python)**
   
@@ -78,7 +77,6 @@ class Connection(object):
           SomeBaseClass.__init__(self)
   ```
   
-  ​
   
 * **inheritance**
   
@@ -166,35 +164,17 @@ class Connection(object):
   
   
   
-  ```
-
-
-
-# data_hiding.py
-
+  # data_hiding.py
   class JustCounter(object):
-
-​``` 
- __secretCount = 0    # private variable which is invisiable outside the class
-
- def count(self):
-    self.__secretCount += 1
-    print self.__secretCount
-​```
-
+      __secretCount = 0    # private variable which is invisiable outside the class
+      
+      def count(self):
+          self.__secretCount += 1
+          print self.__secretCount
+  
   counter = JustCounter()
-
   counter.count()                                       # 1
-
   counter.count()                                       # 2
-
   print counter._JustCounter__secretCount               # 2
-
   print counter.__secretCount                           # AttributeError
-```
-
-
-
-  ​
-
-  ​
+  ```
