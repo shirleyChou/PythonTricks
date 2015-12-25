@@ -137,7 +137,7 @@ class Connection(object):
   
       def push(self, x):
           assert len(self.items) < self.limit
-          FancyStack.push(self, x)    # "super" method call
+          super(LimitedStack, self).push(x)    # "super" method call
           
   f = FancyStack()
   l = LimitedStack(2)
