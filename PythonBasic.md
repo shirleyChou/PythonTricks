@@ -60,7 +60,6 @@ class Connection(object):
   
 * **object**: Aunique instance of a data structure that's defined by its class. An objectcomprises both data members (class variables and instance variables) andmethods.
   
-  ​
   
 * **[super()](http://stackoverflow.com/questions/222877/how-to-use-super-in-python)**
   
@@ -78,7 +77,6 @@ class Connection(object):
           SomeBaseClass.__init__(self)
   ```
   
-  ​
   
 * **inheritance**
   
@@ -91,17 +89,17 @@ class Connection(object):
   | **\_\_str__( self )**        | **Printable string representation. Sample Call: str(obj)** |
   | **\_\_cmp__ ( self, x )**    | **Object comparison. Sample Call: cmp(obj, x)** |
   
-  ​
-  
-* class_and_inheritance.py
-  
+
   ``` python
+  # class_and_inheritance.py
+  
+  
   class Stack(object):
-  "A well-known data structure..."
-  def __init__(self):
+      "A well-known data structure..."
+      def __init__(self):
           self.items = []
   
-  def push(self, x):
+      def push(self, x):
           self.items.append(x)
   
       def pop(self):
@@ -109,9 +107,10 @@ class Connection(object):
           del self.items[-1]
           return x
   
-  def empty(self):
+      def empty(self):
           return len(self.items) == 0
-    
+  
+  
   class FancyStack(Stack): 
       """stack with added ability to inspect inferior stack items"""
   
@@ -138,93 +137,45 @@ class Connection(object):
   
       def push(self, x):
           assert len(self.items) < self.limit
-          FancyStack.push(self, x)    # "super" method call
-  ```
-
-​    class LimitedStack(FancyStack):    
-
-``` 
-
-
-  class FancyStack(Stack):
-
-​``` python
-
-​```
-
-  class LimitedStack(FancyStack):
-
-​``` python
-
-​```
-
+          super(LimitedStack, self).push(x)    # "super" method call
+          
   f = FancyStack()
-
   l = LimitedStack(2)
 
   print hasattr(f, 'items')   # True   
-
   print hasattr(l, 'items')   # True
-
   print getattr(l, 'limit')   # 2
+  # also delattr, setattr
+  
 
-# also delattr, setattr
-
-
-
-# docstring of the class
-
+  # docstring of the class
   print "LimitedStack.__doc__:", LimitedStack.__doc__     
-
   print "FancyStack.__dict__:", FancyStack.__dict__
-
   print "LimitedStack.__name__:", LimitedStack.__name__    # LimitedStack
-
-# Module name in which the class is defined. This attribute is "__main__" in interactive mode.
-
+  # Module name in which the class is defined. This attribute is "__main__" in interactive mode.
   print "LimitedStack.__module__:", LimitedStack.__module__   # __main__
+  # Containing the base class
+  print "LimitedStack.__bases__:", LimitedStack.__bases__
+  
 
-# Containing the base class
-
-  print "LimitedStack.__bases__:", LimitedStack.__bases__  
-
-
-
-# the function of __repr__ and __str__
-
+  # the function of __repr__ and __str__
   print repr(l)   # __repr__: LimitedStack
-
   print str(l)    # __str__: LimitedStack
-
   print l         # __str__: LimitedStack
-
-
-
-# data_hiding.py
-
+  
+  
+  
+  # data_hiding.py
   class JustCounter(object):
-
-​``` 
- __secretCount = 0    # private variable which is invisiable outside the class
-
- def count(self):
-    self.__secretCount += 1
-    print self.__secretCount
-​```
-
+      __secretCount = 0    # private variable which is invisiable outside the class
+      
+      def count(self):
+          self.__secretCount += 1
+          print self.__secretCount
+  
   counter = JustCounter()
-
   counter.count()                                       # 1
-
   counter.count()                                       # 2
-
   print counter._JustCounter__secretCount               # 2
-
   print counter.__secretCount                           # AttributeError
-```
-
-
-
-  ​
-
-  ​
+  ```
