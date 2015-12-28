@@ -214,6 +214,6 @@ class Connection(object):
   
   self 指的是 instance. 也就是将实例本身作为第一个参数传递给函数。
   
-  ![classmethod](D:\github\pythonTricks\trans-classmethod-staticmethod-1.png)
+  ![classmethod](https://github.com/shirleyChou/PythonTricks/tree/master/Res/trans-classmethod-staticmethod-1.png)
   
 * 飞电风扇
