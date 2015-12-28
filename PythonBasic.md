@@ -88,95 +88,95 @@ class Connection(object):
   | **\_\_str__( self )**        | **Printable string representation. Sample Call: str(obj)** |
   | **\_\_cmp__ ( self, x )**    | **Object comparison. Sample Call: cmp(obj, x)** |
 
-``` python
-  # class_and_inheritance.py
+  ``` python
+    # class_and_inheritance.py
 
 
-  class Stack(object):
-      "A well-known data structure..."
-      def __init__(self):
-          self.items = []
+    class Stack(object):
+        "A well-known data structure..."
+        def __init__(self):
+            self.items = []
 
-      def push(self, x):
-          self.items.append(x)
+        def push(self, x):
+            self.items.append(x)
 
-      def pop(self):
-          x = self.items[-1]
-          del self.items[-1]
-          return x
+        def pop(self):
+            x = self.items[-1]
+            del self.items[-1]
+            return x
 
-      def empty(self):
-          return len(self.items) == 0
-
-
-  class FancyStack(Stack): 
-      """stack with added ability to inspect inferior stack items"""
-
-      def peek(self, n):
-          size = len(self.items)
-          assert 0 <= n < size
-          return self.items[size-1-n]
+        def empty(self):
+            return len(self.items) == 0
 
 
-  class LimitedStack(FancyStack):  
-      """fancy stack with limit on stack size"""
+    class FancyStack(Stack): 
+        """stack with added ability to inspect inferior stack items"""
 
-      def __init__(self, limit):
-          # __init__ would overwrite parent class if no FancyStack.__init__(self)
-          self.limit = limit
-          super(LimitedStack, self).__init__()   # base class constructor
-
-      def __str__(self):
-          # return the description of a class
-          return '__str__: ' + LimitedStack.__name__
-
-      def __repr__(self):
-          return '__repr__: ' + LimitedStack.__name__
-
-      def push(self, x):
-          assert len(self.items) < self.limit
-          super(LimitedStack, self).push(x)    # "super" method call
-
-  f = FancyStack()
-  l = LimitedStack(2)
-
-  print hasattr(f, 'items')   # True   
-  print hasattr(l, 'items')   # True
-  print getattr(l, 'limit')   # 2
-  # also delattr, setattr
+        def peek(self, n):
+            size = len(self.items)
+            assert 0 <= n < size
+            return self.items[size-1-n]
 
 
-  # docstring of the class
-  print "LimitedStack.__doc__:", LimitedStack.__doc__     
-  print "FancyStack.__dict__:", FancyStack.__dict__
-  print "LimitedStack.__name__:", LimitedStack.__name__    # LimitedStack
-  # Module name in which the class is defined. This attribute is "__main__" in interactive mode.
-  print "LimitedStack.__module__:", LimitedStack.__module__   # __main__
-  # Containing the base class
-  print "LimitedStack.__bases__:", LimitedStack.__bases__
+    class LimitedStack(FancyStack):  
+        """fancy stack with limit on stack size"""
+
+        def __init__(self, limit):
+            # __init__ would overwrite parent class if no FancyStack.__init__(self)
+            self.limit = limit
+            super(LimitedStack, self).__init__()   # base class constructor
+
+        def __str__(self):
+            # return the description of a class
+            return '__str__: ' + LimitedStack.__name__
+
+        def __repr__(self):
+            return '__repr__: ' + LimitedStack.__name__
+
+        def push(self, x):
+            assert len(self.items) < self.limit
+            super(LimitedStack, self).push(x)    # "super" method call
+
+    f = FancyStack()
+    l = LimitedStack(2)
+
+    print hasattr(f, 'items')   # True   
+    print hasattr(l, 'items')   # True
+    print getattr(l, 'limit')   # 2
+    # also delattr, setattr
 
 
-  # the function of __repr__ and __str__
-  print repr(l)   # __repr__: LimitedStack
-  print str(l)    # __str__: LimitedStack
-  print l         # __str__: LimitedStack
+    # docstring of the class
+    print "LimitedStack.__doc__:", LimitedStack.__doc__     
+    print "FancyStack.__dict__:", FancyStack.__dict__
+    print "LimitedStack.__name__:", LimitedStack.__name__    # LimitedStack
+    # Module name in which the class is defined. This attribute is "__main__" in interactive mode.
+    print "LimitedStack.__module__:", LimitedStack.__module__   # __main__
+    # Containing the base class
+    print "LimitedStack.__bases__:", LimitedStack.__bases__
+
+
+    # the function of __repr__ and __str__
+    print repr(l)   # __repr__: LimitedStack
+    print str(l)    # __str__: LimitedStack
+    print l         # __str__: LimitedStack
 
 
 
-  # data_hiding.py
-  class JustCounter(object):
-      __secretCount = 0    # private variable which is invisiable outside the class
+    # data_hiding.py
+    class JustCounter(object):
+        __secretCount = 0    # private variable which is invisiable outside the class
 
-      def count(self):
-          self.__secretCount += 1
-          print self.__secretCount
+        def count(self):
+            self.__secretCount += 1
+            print self.__secretCount
 
-  counter = JustCounter()
-  counter.count()                                       # 1
-  counter.count()                                       # 2
-  print counter._JustCounter__secretCount               # 2
-  print counter.__secretCount                           # AttributeError
-```
+    counter = JustCounter()
+    counter.count()                                       # 1
+    counter.count()                                       # 2
+    print counter._JustCounter__secretCount               # 2
+    print counter.__secretCount                           # AttributeError
+  ```
 
 * **@staticmethod vs @classmethod**
   
