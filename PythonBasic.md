@@ -217,6 +217,7 @@ class Connection(object):
   Kls.cmethod()   # ('Class:', (<class '__main__.Kls'>,))
 
   ```
+<<<<<<< HEAD
 
 图解：
 
@@ -224,6 +225,9 @@ class Connection(object):
 
 
 
+=======
+  
+>>>>>>> 984c3d83ceba0bdea163b72ba905eeffd6730ab9
 * **self**
   
   self 指的是 instance. 也就是将实例本身作为第一个参数传递给函数。
