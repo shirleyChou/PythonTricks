@@ -207,8 +207,7 @@ class Connection(object):
   Kls.smethod()   # ('Static:', ())
   Kls.cmethod()   # ('Class:', (<class '__main__.Kls'>,))
   ```
-  
-  ​
+
   
 * **self**
   
