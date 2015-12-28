@@ -185,21 +185,19 @@ class Connection(object):
   # encoding: utf-8
 
   class Kls(object):
+      def __init__(self, data):
+          self.data = data
 
-``` 
-  def __init__(self, data):
-      self.data = data
+      def printd(self):
+          print self.data
 
-  def printd(self):
-      print self.data
+      @staticmethod
+      def smethod(*arg):
+          print('Static:', arg)
 
-  @staticmethod
-  def smethod(*arg):
-      print('Static:', arg)
-
-  @classmethod
-  def cmethod(*arg):
-      print('Class:', arg)
+      @classmethod
+          def cmethod(*arg):
+              print('Class:', arg)
 ```
 
   ik = Kls(23)
@@ -217,17 +215,12 @@ class Connection(object):
   Kls.cmethod()   # ('Class:', (<class '__main__.Kls'>,))
 
   ```
-<<<<<<< HEAD
 
 图解：
 
 ![2](https://github.com/shirleyChou/PythonTricks/blob/master/Res/trans-classmethod-staticmethod-2.png?raw=true)
 
 
-
-=======
-  
->>>>>>> 984c3d83ceba0bdea163b72ba905eeffd6730ab9
 * **self**
   
   self 指的是 instance. 也就是将实例本身作为第一个参数传递给函数。
