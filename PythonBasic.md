@@ -181,6 +181,7 @@ class Connection(object):
 * [**@staticmethod vs @classmethod**](http://stackoverflow.com/questions/136097/what-is-the-difference-between-staticmethod-and-classmethod-in-python)
   * **With classmethods**, the class of the object instance is implicitly passed as the first argument instead of self. In fact, if you define something to be a classmethod, it is probably because you intend to call it from the class rather than from a class instance.
   * **With staticmethods**, neither self (the object instance) nor  cls (the class) is implicitly passed as the first argument. They behave like plain functions except that you can call them from an instance or the class
+
   
   ``` python
   
@@ -214,6 +215,19 @@ class Connection(object):
 
   A.static_foo('hi')
   # executing static_foo(hi)
+  
+  # when you call a.foo you don't just get the function, you get a "partially applied" version of the function 
+  # with the object instance a bound as the first argument to the function. 
+  print a.foo
+  # <bound method A.foo of <__main__.A object at 0xb7d52f0c>>
+  
+  # With a.class_foo, a is not bound to class_foo, rather the class A is bound to class_foo
+  print a.class_foo
+  # <bound method type.class_foo of <class '__main__.A'>>
+  
+  # static_foo expects 1 argument, and a.static_foo expects 1 argument too.
+  print(a.static_foo)
+  # <function static_foo at 0xb7d479cc>
   ```
 
   图解：
