@@ -181,8 +181,10 @@ class Connection(object):
 * [**@staticmethod vs @classmethod**](http://stackoverflow.com/questions/136097/what-is-the-difference-between-staticmethod-and-classmethod-in-python)
   * **With classmethods**, the class of the object instance is implicitly passed as the first argument instead of self. In fact, if you define something to be a classmethod, it is probably because you intend to call it from the class rather than from a class instance.
   * **With staticmethods**, neither self (the object instance) nor  cls (the class) is implicitly passed as the first argument. They behave like plain functions except that you can call them from an instance or the class
+  * **self**, 指的是 instance. 也就是将实例本身作为第一个参数传递给函数。
+    ![classmethod](https://github.com/shirleyChou/PythonTricks/blob/master/Res/trans-classmethod-staticmethod-1.png?raw=true)
 
-  
+
   ``` python
   
   # encoding: utf-8
@@ -229,15 +231,5 @@ class Connection(object):
   print(a.static_foo)
   # <function static_foo at 0xb7d479cc>
   ```
-
-  图解：
-
-  ![2](https://github.com/shirleyChou/PythonTricks/blob/master/Res/trans-classmethod-staticmethod-2.png?raw=true)
-
-
-
-* **self**    
-  self 指的是 instance. 也就是将实例本身作为第一个参数传递给函数。
-  ![classmethod](https://github.com/shirleyChou/PythonTricks/blob/master/Res/trans-classmethod-staticmethod-1.png?raw=true)
   
 * waiting
