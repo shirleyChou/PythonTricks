@@ -182,6 +182,7 @@ class Connection(object):
   * **With classmethods**, the class of the object instance is implicitly passed as the first argument instead of self. In fact, if you define something to be a classmethod, it is probably because you intend to call it from the class rather than from a class instance.
   * **With staticmethods**, neither self (the object instance) nor  cls (the class) is implicitly passed as the first argument. They behave like plain functions except that you can call them from an instance or the class
   * **self**, 指的是 instance. 也就是将实例本身作为第一个参数传递给函数。
+
     ![classmethod](https://github.com/shirleyChou/PythonTricks/blob/master/Res/trans-classmethod-staticmethod-1.png?raw=true)
 
 
