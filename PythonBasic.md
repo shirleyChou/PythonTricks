@@ -209,7 +209,9 @@ class Connection(object):
   ```
 
 图解：
+
 ![2](https://github.com/shirleyChou/PythonTricks/blob/master/Res/trans-classmethod-staticmethod-2.png?raw=true)
+
 
 
 * **self**
