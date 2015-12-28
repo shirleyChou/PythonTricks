@@ -179,3 +179,4 @@ class Connection(object):
   print counter._JustCounter__secretCount               # 2
   print counter.__secretCount                           # AttributeError
   ```
+* **@staticmethod vs @classmethod**
