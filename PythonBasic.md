@@ -181,34 +181,49 @@ class Connection(object):
 * **@staticmethod vs @classmethod**
   
   ``` python
-  #encoding: utf-8
   
-  
+  # encoding: utf-8
+
   class Kls(object):
-      def __init__(self, data):
-          self.data = data
-  
-      def printd(self):
-          print self.data
-  
-      @staticmethod
-      def smethod(*arg):
-          print('Static:', arg)
-  
-      @classmethod
-      def cmethod(*arg):
-          print('Class:', arg)
-  
+
+``` 
+  def __init__(self, data):
+      self.data = data
+
+  def printd(self):
+      print self.data
+
+  @staticmethod
+  def smethod(*arg):
+      print('Static:', arg)
+
+  @classmethod
+  def cmethod(*arg):
+      print('Class:', arg)
+```
+
   ik = Kls(23)
+
   ik.printd()    # 23
+
   ik.smethod()   # ('Static:', ())
+
   Kls.printd()   # TypeError: unbound method printd() must be called with Kls instance as first argument
+
   ik.cmethod()   # ('Class:', (<class '__main__.Kls'>,))
+
   Kls.smethod()   # ('Static:', ())
+
   Kls.cmethod()   # ('Class:', (<class '__main__.Kls'>,))
+
   ```
 
-  
+图解：
+
+![2](https://github.com/shirleyChou/PythonTricks/blob/master/Res/trans-classmethod-staticmethod-2.png?raw=true)
+
+
+
 * **self**
   
   self 指的是 instance. 也就是将实例本身作为第一个参数传递给函数。
