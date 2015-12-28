@@ -208,9 +208,9 @@ class Connection(object):
   Kls.cmethod()   # ('Class:', (<class '__main__.Kls'>,))
   ```
 
-图解：
+  图解：
 
-![2](https://github.com/shirleyChou/PythonTricks/blob/master/Res/trans-classmethod-staticmethod-2.png?raw=true)
+  ![2](https://github.com/shirleyChou/PythonTricks/blob/master/Res/trans-classmethod-staticmethod-2.png?raw=true)
 
 
 
