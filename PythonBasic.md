@@ -57,10 +57,9 @@ class Connection(object):
 ```
 
 * **instance**: **An individual object of a certain class.** Anobject obj that belongs to a class Circle, for example, is an instance of theclass Circle.
-  
 * **object**: Aunique instance of a data structure that's defined by its class. An objectcomprises both data members (class variables and instance variables) andmethods.
-  
-  
+
+
 * **[super()](http://stackoverflow.com/questions/222877/how-to-use-super-in-python)**
   
   The benefits of `super()` in single-inheritance are minimal -- mostly, you don't have to hard-code the name of the base class into every method that uses its parent methods.
@@ -76,8 +75,8 @@ class Connection(object):
       def __init__(self):
           SomeBaseClass.__init__(self)
   ```
-  
-  
+
+
 * **inheritance**
   
   **Base Overloading Methods**
@@ -88,57 +87,56 @@ class Connection(object):
   | **\_\_repr__( self )**       | **Evaluatable string representation. Sample Call: repr(obj)** |
   | **\_\_str__( self )**        | **Printable string representation. Sample Call: str(obj)** |
   | **\_\_cmp__ ( self, x )**    | **Object comparison. Sample Call: cmp(obj, x)** |
-  
 
-  ``` python
+``` python
   # class_and_inheritance.py
-  
-  
+
+
   class Stack(object):
       "A well-known data structure..."
       def __init__(self):
           self.items = []
-  
+
       def push(self, x):
           self.items.append(x)
-  
+
       def pop(self):
           x = self.items[-1]
           del self.items[-1]
           return x
-  
+
       def empty(self):
           return len(self.items) == 0
-  
-  
+
+
   class FancyStack(Stack): 
       """stack with added ability to inspect inferior stack items"""
-  
+
       def peek(self, n):
           size = len(self.items)
           assert 0 <= n < size
           return self.items[size-1-n]
-        
-  
+
+
   class LimitedStack(FancyStack):  
       """fancy stack with limit on stack size"""
-  
+
       def __init__(self, limit):
           # __init__ would overwrite parent class if no FancyStack.__init__(self)
           self.limit = limit
           super(LimitedStack, self).__init__()   # base class constructor
-  
+
       def __str__(self):
           # return the description of a class
           return '__str__: ' + LimitedStack.__name__
-  
+
       def __repr__(self):
           return '__repr__: ' + LimitedStack.__name__
-  
+
       def push(self, x):
           assert len(self.items) < self.limit
           super(LimitedStack, self).push(x)    # "super" method call
-          
+
   f = FancyStack()
   l = LimitedStack(2)
 
@@ -146,7 +144,7 @@ class Connection(object):
   print hasattr(l, 'items')   # True
   print getattr(l, 'limit')   # 2
   # also delattr, setattr
-  
+
 
   # docstring of the class
   print "LimitedStack.__doc__:", LimitedStack.__doc__     
@@ -156,27 +154,66 @@ class Connection(object):
   print "LimitedStack.__module__:", LimitedStack.__module__   # __main__
   # Containing the base class
   print "LimitedStack.__bases__:", LimitedStack.__bases__
-  
+
 
   # the function of __repr__ and __str__
   print repr(l)   # __repr__: LimitedStack
   print str(l)    # __str__: LimitedStack
   print l         # __str__: LimitedStack
-  
-  
-  
+
+
+
   # data_hiding.py
   class JustCounter(object):
       __secretCount = 0    # private variable which is invisiable outside the class
-      
+
       def count(self):
           self.__secretCount += 1
           print self.__secretCount
-  
+
   counter = JustCounter()
   counter.count()                                       # 1
   counter.count()                                       # 2
   print counter._JustCounter__secretCount               # 2
   print counter.__secretCount                           # AttributeError
-  ```
+```
+
 * **@staticmethod vs @classmethod**
+  
+  ``` python
+  #encoding: utf-8
+  
+  
+  class Kls(object):
+      def __init__(self, data):
+          self.data = data
+  
+      def printd(self):
+          print self.data
+  
+      @staticmethod
+      def smethod(*arg):
+          print('Static:', arg)
+  
+      @classmethod
+      def cmethod(*arg):
+          print('Class:', arg)
+  
+  ik = Kls(23)
+  ik.printd()    # 23
+  ik.smethod()   # ('Static:', ())
+  Kls.printd()   # TypeError: unbound method printd() must be called with Kls instance as first argument
+  ik.cmethod()   # ('Class:', (<class '__main__.Kls'>,))
+  Kls.smethod()   # ('Static:', ())
+  Kls.cmethod()   # ('Class:', (<class '__main__.Kls'>,))
+  ```
+  
+  ​
+  
+* **self**
+  
+  self 指的是 instance. 也就是将实例本身作为第一个参数传递给函数。
+  
+  ![classmethod](D:\github\pythonTricks\trans-classmethod-staticmethod-1.png)
+  
+* 飞电风扇
