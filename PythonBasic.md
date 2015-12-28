@@ -178,34 +178,35 @@ class Connection(object):
     print counter.__secretCount                           # AttributeError
   ```
 
-* **@staticmethod vs @classmethod**
+* [**@staticmethod vs @classmethod**](http://stackoverflow.com/questions/136097/what-is-the-difference-between-staticmethod-and-classmethod-in-python)
+  * With **classmethods**, the class of the object instance is implicitly passed as the first argument instead of self. In fact, if you define something to be a classmethod, it is probably because you intend to call it from the class rather than from a class instance.
   
   ``` python
   
   # encoding: utf-8
 
-  class Kls(object):
-      def __init__(self, data):
-          self.data = data
+  class A(object):
+    def foo(self,x):
+        print "executing foo(%s,%s)"%(self,x)
 
-      def printd(self):
-          print self.data
+    @classmethod
+    def class_foo(cls,x):
+        print "executing class_foo(%s,%s)"%(cls,x)
 
-      @staticmethod
-      def smethod(*arg):
-          print('Static:', arg)
+    @staticmethod
+    def static_foo(x):
+        print "executing static_foo(%s)"%x    
 
-      @classmethod
-          def cmethod(*arg):
-              print('Class:', arg)
-
-  ik = Kls(23)
-  ik.printd()    # 23
-  ik.smethod()   # ('Static:', ())
-  Kls.printd()   # TypeError: unbound method printd() must be called with Kls instance as first argument
-  ik.cmethod()   # ('Class:', (<class '__main__.Kls'>,))
-  Kls.smethod()   # ('Static:', ())
-  Kls.cmethod()   # ('Class:', (<class '__main__.Kls'>,))
+  a=A()
+  
+  a.foo(1)
+  # executing foo(<__main__.A object at 0xb7dbef0c>,1)
+  
+  a.class_foo(1)
+  # executing class_foo(<class '__main__.A'>,1)
+  
+  A.class_foo(1)
+  # executing class_foo(<class '__main__.A'>,1)
   ```
 
   图解：
