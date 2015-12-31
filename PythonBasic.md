@@ -233,4 +233,33 @@ class Connection(object):
   # <function static_foo at 0xb7d479cc>
   ```
   
-* waiting
+* [class descriptors](http://stackoverflow.com/questions/944592/best-practice-for-python-assert)
+  ```python
+  class LessThanZeroException(Exception):
+      pass
+
+  class variable(object):
+      def __init__(self, value=0):
+          self.__x = value
+
+      def __set__(self, obj, value):
+          if value < 0:
+              raise LessThanZeroException('x is less than zero')
+
+          self.__x  = value
+
+      def __get__(self, obj, objType):
+          return self.__x
+
+  class MyClass(object):
+      x = variable()
+
+  >>> m = MyClass()
+  >>> m.x = 10
+  >>> m.x -= 20
+  Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    File "my.py", line 7, in __set__
+      raise LessThanZeroException('x is less than zero')
+  LessThanZeroException: x is less than zero
+  ```
