@@ -105,7 +105,12 @@ The eval function lets a python program run python code within itself.
 >>> type(b)
 ```
 
-
+#### sum()
+```python
+>>> l = [[1,2,3], [4,5,6], [7], [8,9]]
+>>> sum(l, [])
+>>> [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
 
 #### zip()
 
