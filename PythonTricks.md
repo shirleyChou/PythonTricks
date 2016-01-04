@@ -157,15 +157,6 @@ The eval function lets a python program run python code within itself.
 >>> print(a.replace('de','A'))   # ABC Afg
 ```
 
-#### String Magic
-
-``` python
->>> a = "ABC defg"
->>> print(a.replace('de','A'))   # ABC Afg
-```
-
-
-
 #### 用dict实现switch..case语法
 
 **PHP中的switch..case语句**：
