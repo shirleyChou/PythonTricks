@@ -38,6 +38,34 @@ In Python, functions are first class objects and behave like any other object, s
 * store functions as dictionary values
 * return a function from another function
 
+##### function arguments
+what is passsed to the function is a copy of the name x that refers to the content (a list) `[1, 2, 3]`. 
+```python
+def transmogrify(x):
+    x[0] = 999
+    return x
+
+x = [1,2,3]
+print x
+print transmogrify(x)
+print x
+# [1, 2, 3]
+# [999, 2, 3]
+# [999, 2, 3]
+
+def no_mogrify(x):
+    x = [4,5,6]      
+    return x
+
+x = [1,2,3]
+print x
+print no_mogrify(x)
+print x
+# [1, 2, 3]
+# [4, 5, 6]
+# [1, 2, 3]
+```
+
 
 #### Classes
 
