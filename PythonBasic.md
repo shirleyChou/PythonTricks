@@ -3,12 +3,6 @@
 ​Recap the basic knowledges of Python :smile:
 
 ---
-#### String Magic
-```python
->>> a = "ABC defg"
->>> print(a.replace('de','A'))   # ABC Afg
-
-```
 #### [Duck typing](http://stackoverflow.com/questions/4205130/what-is-duck-typing)
 
 It is a term used in dynamic languages that do not have strong typing.

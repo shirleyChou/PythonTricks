@@ -147,6 +147,11 @@ The eval function lets a python program run python code within itself.
 
 
 ### Data Structure
+#### String Magic
+```python
+>>> a = "ABC defg"
+>>> print(a.replace('de','A'))   # ABC Afg
+```
 
 #### String Magic
 
