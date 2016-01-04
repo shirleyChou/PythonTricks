@@ -119,9 +119,9 @@ class Connection(object):
   | **\_\_str__( self )**        | **Printable string representation. Sample Call: str(obj)** |
   | **\_\_cmp__ ( self, x )**    | **Object comparison. Sample Call: cmp(obj, x)** |
 
+
   ``` python
     # class_and_inheritance.py
-
 
     class Stack(object):
         "A well-known data structure..."
