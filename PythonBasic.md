@@ -32,7 +32,11 @@ AssertionError:
 >>>if not condition:
 ...  raise AssertionError()
 ```
-
+#### Functions
+In Python, functions are first class objects and behave like any other object, such as an int or a list. That means:
+* you can use functions as arguments to other functions
+* store functions as dictionary values
+* return a function from another function
 
 
 #### Classes
