@@ -80,8 +80,6 @@ Sorting  reverse:
 [1, 2, 3, 4, 5]
 ```
 
-
-
 #### map() and reduce() and filter()
 
 ``` python
@@ -107,8 +105,6 @@ expr = "28+32+++32++39"
 print reduce(add, map(int, filter(bool, expr.split("+"))))
 # 131
 ```
-
-
 
 #### eval()
 
@@ -151,6 +147,15 @@ The eval function lets a python program run python code within itself.
 
 
 ### Data Structure
+
+#### String Magic
+
+``` python
+>>> a = "ABC defg"
+>>> print(a.replace('de','A'))   # ABC Afg
+```
+
+
 
 #### 用dict实现switch..case语法
 
