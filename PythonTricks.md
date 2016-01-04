@@ -82,9 +82,31 @@ Sorting  reverse:
 
 
 
-#### map()
+#### map() and reduce() and filter()
 
-http://my.oschina.net/zyzzy/blog/115096
+``` python
+# map
+def sqr(x): return x ** 2
+a = [2, 3, 4]
+b = [10, 5, 3]
+c = map(sqr, a)    # [4, 9 16]
+d = map(pow, a, b)  # power return a**b
+
+# reduce
+from operator import add
+reduce(add, [1, 2, 3, 4, 5])   # 15
+
+# filter
+# filter(function, iterable) is equivalent to [item for item in iterable if function(item)]
+a=[0,1,2,3,4,5,6,7]
+filter(None, a)    # [1,2,3,4,5,6,7]
+
+# precise usage of this three
+from operator import add
+expr = "28+32+++32++39"
+print reduce(add, map(int, filter(bool, expr.split("+"))))
+# 131
+```
 
 
 
@@ -106,7 +128,8 @@ The eval function lets a python program run python code within itself.
 ```
 
 #### sum()
-```python
+
+``` python
 >>> l = [[1,2,3], [4,5,6], [7], [8,9]]
 >>> sum(l, [])
 >>> [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -203,4 +226,3 @@ print hash(fs)
 
 - defaultdict
 - [Counter](http://www.pythoner.com/205.html)
-
