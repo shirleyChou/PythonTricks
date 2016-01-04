@@ -84,11 +84,13 @@ Sorting  reverse:
 
 ``` python
 # map
-def sqr(x): return x ** 2
-a = [2, 3, 4]
-b = [10, 5, 3]
-c = map(sqr, a)    # [4, 9 16]
-d = map(pow, a, b)  # power return a**b
+def custom_sum(xs, transform):
+    """Returns the sum of xs after a user specified transform."""
+    return sum(map(transform, xs))
+
+xs = range(5)
+print custom_sum(xs, square)
+print custom_sum(xs, cube)
 
 # reduce
 from operator import add
@@ -147,8 +149,10 @@ The eval function lets a python program run python code within itself.
 
 
 ### Data Structure
+
 #### String Magic
-```python
+
+``` python
 >>> a = "ABC defg"
 >>> print(a.replace('de','A'))   # ABC Afg
 ```
