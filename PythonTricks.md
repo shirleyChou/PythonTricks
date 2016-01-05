@@ -146,7 +146,16 @@ The eval function lets a python program run python code within itself.
 >>> a   # ([3, 4], [7, 8], [1, 2], [5, 6], [9, 0])
 ```
 
+#### iter()
 
+**Iterators** represent streams of values. Because only one value is consumed at a time, they use very little memory. Use of iterators is very helpful for working with data sets too large to fit into RAM.
+
+``` python
+xs = [1,2,3]
+x_iter = iter(xs)
+for x in x_iter:
+    print x
+```
 
 ### Data Structure
 
