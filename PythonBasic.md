@@ -27,14 +27,6 @@ for i in fib():
 # 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
 ```
 
-#### Decorators
-
-Decorators are a type of HOF that take a function and return a wrapped function that provides additional useful properties.    
-
-#### [Descriptor](https://docs.python.org/2/howto/descriptor.html?highlight=descriptor%20protocol)
-
-and also: http://stackoverflow.com/questions/3798835/understanding-get-and-set-and-python-descriptors
-
 #### Errors and Exceptions
 
 ##### assert
@@ -367,7 +359,11 @@ class Connection(object):
   ```
   
 * [class descriptors](http://stackoverflow.com/questions/944592/best-practice-for-python-assert)
-  
+
+Decorators are a type of HOF that take a function and return a wrapped function that provides additional useful properties. Two links:
+* https://docs.python.org/2/howto/descriptor.html?highlight=descriptor%20protocol)
+* http://stackoverflow.com/questions/3798835/understanding-get-and-set-and-python-descriptors
+
   ``` python
   class LessThanZeroException(Exception):
       pass
