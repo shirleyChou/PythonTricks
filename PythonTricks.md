@@ -226,7 +226,7 @@ def romanToInt(s):
 
 #### frozenset()
 
-frozenset的作用是使传入的数据类型（无论是不是mutable)became immutable, 从而可以成为dictionary的键值(key)
+frozenset的作用是使传入的数据类型（无论是不是mutable）became immutable, 从而可以成为dictionary的键值（key）
 
 ``` Python
 fs = frozenset(['a', 'b'])
@@ -254,4 +254,87 @@ print (x*x for x in range(5))
 print {x for x in range(10)}
 # set([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 ```
+
+
+
+### Module
+
+#### The `operator` module
+
+The `operator` module provides “function” versions of common Python operators (+, *, [] etc) that can be easily used where a function argument is expected.
+
+``` python
+import operator as op
+
+# Here is another way to express the sum function
+print reduce(op.add, range(10))
+
+# The pattern can be generalized
+print reduce(op.mul, range(1, 10))
+```
+
+
+
+#### The `functools` module
+
+The most useful function in the `functools` module is `partial`, which allows you to create a new function from an old one with some arguments “filled-in”
+
+``` python
+from functools import partial
+import operator as op
+
+sum_ = partial(reduce, op.add)
+prod_ = partial(reduce, op.mul)
+print sum_([1,2,3,4])
+print prod_([1,2,3,4])
+
+# This is extremely useful to create functions
+# that expect a fixed number of arguments
+from functools import partial
+
+import scipy.stats as stats
+import numpy as np
+
+def compare(x, y, func):
+    """Returne p-value for some appropriate comparison test."""
+    return func(x, y)[1]
+
+x, y = np.random.normal(0, 1, (100,2)).T
+
+print "p value assuming equal variance    =%.8f" % compare(x, y, stats.ttest_ind)
+test = partial(stats.ttest_ind, equal_var=False)
+print "p value not assuming equal variance=%.8f" % compare(x, y, test)
+```
+
+
+
+#### The `itertools` module
+
+This provides many essential functions for working with iterators.
+
+The `permuations` and `combinations` generators may be particularly useful for simulations, and the `groupby` gnerator is useful for data analyiss.
+
+``` python
+from itertools import cycle, groupby, islice, permutations, combinations
+
+print list(islice(cycle('abcd'), 0, 10))
+print
+
+animals = sorted(['pig', 'cow', 'giraffe', 'elephant',
+                  'dog', 'cat', 'hippo', 'lion', 'tiger'], key=len)
+for k, g in groupby(animals, key=len):
+    print k, list(g)
+print
+
+print [''.join(p) for p in permutations('abc')]
+print
+
+print [list(c) for c in combinations([1,2,3,4], r=2)]
+```
+
+
+
+#### The `toolz`, `fn` and `funcy` modules
+
+[for detail, visit](http://people.duke.edu/~ccc14/sta-663/FunctionsSolutions.html)
 
