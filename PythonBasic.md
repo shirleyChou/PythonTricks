@@ -9,6 +9,7 @@ It is a term used in dynamic languages that do not have strong typing.
 
 The idea is that you don't need a type in order to invoke an existing method on an object - if a method is defined on it, you can invoke it.
 
+#### Iterators
 
 
 #### Decorators
