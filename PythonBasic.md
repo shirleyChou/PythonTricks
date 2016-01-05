@@ -140,7 +140,8 @@ class Connection(object):
 
 
 * **inheritance**
-  
+
+ 
   ``` python
   # class_and_inheritance.py
   
@@ -237,7 +238,6 @@ class Connection(object):
   print counter._JustCounter__secretCount               # 2
   print counter.__secretCount                           # AttributeError
   ```
-
 
 * [**@staticmethod vs @classmethod**](http://stackoverflow.com/questions/136097/what-is-the-difference-between-staticmethod-and-classmethod-in-python)
   
