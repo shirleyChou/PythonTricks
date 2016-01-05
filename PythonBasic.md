@@ -100,8 +100,6 @@ A recursive function is one that calls itself. Recursive functions are extremely
 
 [wait to read](http://intermediatepythonista.com/classes-and-objects)
 
-
-
 * **class variable**: a variable that is shared by all instances of a class. Classvariables are defined within a class but outside any of the class's methods.Class variables are not used as frequently as instance variables are.
 * **instance variable**: A variable that is defined inside a method and belongs only to the current instance of a class.
 
@@ -301,54 +299,54 @@ class Connection(object):
   * **self**, 指的是 instance. 也就是将实例本身作为第一个参数传递给函数。
     
     ![classmethod](https://github.com/shirleyChou/PythonTricks/blob/master/Res/trans-classmethod-staticmethod-1.png?raw=true)
-
-``` python
-
+  
+  ``` python
+  
   # encoding: utf-8
-
+  
   class A(object):
       def foo(self,x):
           print "executing foo(%s,%s)"%(self,x)
-
+  
       @classmethod
       def class_foo(cls,x):
           print "executing class_foo(%s,%s)"%(cls,x)
-
+  
       @staticmethod
       def static_foo(x):
           print "executing static_foo(%s)"%x    
-
+  
   a=A()
-
+  
   a.foo(1)
   # executing foo(<__main__.A object at 0xb7dbef0c>,1)
-
+  
   a.class_foo(1)
   # executing class_foo(<class '__main__.A'>,1)
-
+  
   A.class_foo(1)
   # executing class_foo(<class '__main__.A'>,1)
-
+  
   a.static_foo(1)
   # executing static_foo(1)
-
+  
   A.static_foo('hi')
   # executing static_foo(hi)
-
+  
   # when you call a.foo you don't just get the function, you get a "partially applied" version of the function 
   # with the object instance a bound as the first argument to the function. 
   print a.foo
   # <bound method A.foo of <__main__.A object at 0xb7d52f0c>>
-
+  
   # With a.class_foo, a is not bound to class_foo, rather the class A is bound to class_foo
   print a.class_foo
   # <bound method type.class_foo of <class '__main__.A'>>
-
+  
   # static_foo expects 1 argument, and a.static_foo expects 1 argument too.
   print(a.static_foo)
   # <function static_foo at 0xb7d479cc>
-```
-
+  ```
+  
 * [class descriptors](http://stackoverflow.com/questions/944592/best-practice-for-python-assert)
   
   ``` python
