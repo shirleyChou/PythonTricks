@@ -180,52 +180,52 @@ class Connection(object):
           # return the description of a class
           return '__str__: ' + LimitedStack.__name__
 
-        def __repr__(self):
-            return '__repr__: ' + LimitedStack.__name__
+      def __repr__(self):
+          return '__repr__: ' + LimitedStack.__name__
 
-        def push(self, x):
-            assert len(self.items) < self.limit
-            super(LimitedStack, self).push(x)    # "super" method call
+      def push(self, x):
+          assert len(self.items) < self.limit
+          super(LimitedStack, self).push(x)    # "super" method call
 
-    f = FancyStack()
-    l = LimitedStack(2)
+  f = FancyStack()
+  l = LimitedStack(2)
 
-    print hasattr(f, 'items')   # True   
-    print hasattr(l, 'items')   # True
-    print getattr(l, 'limit')   # 2
-    # also delattr, setattr
-
-
-    # docstring of the class
-    print "LimitedStack.__doc__:", LimitedStack.__doc__     
-    print "FancyStack.__dict__:", FancyStack.__dict__
-    print "LimitedStack.__name__:", LimitedStack.__name__    # LimitedStack
-    # Module name in which the class is defined. This attribute is "__main__" in interactive mode.
-    print "LimitedStack.__module__:", LimitedStack.__module__   # __main__
-    # Containing the base class
-    print "LimitedStack.__bases__:", LimitedStack.__bases__
+  print hasattr(f, 'items')   # True   
+  print hasattr(l, 'items')   # True
+  print getattr(l, 'limit')   # 2
+  # also delattr, setattr
 
 
-    # the function of __repr__ and __str__
-    print repr(l)   # __repr__: LimitedStack
-    print str(l)    # __str__: LimitedStack
-    print l         # __str__: LimitedStack
+  # docstring of the class
+  print "LimitedStack.__doc__:", LimitedStack.__doc__     
+  print "FancyStack.__dict__:", FancyStack.__dict__
+  print "LimitedStack.__name__:", LimitedStack.__name__    # LimitedStack
+  # Module name in which the class is defined. This attribute is "__main__" in interactive mode.
+  print "LimitedStack.__module__:", LimitedStack.__module__   # __main__
+  # Containing the base class
+  print "LimitedStack.__bases__:", LimitedStack.__bases__
+
+
+  # the function of __repr__ and __str__
+  print repr(l)   # __repr__: LimitedStack
+  print str(l)    # __str__: LimitedStack
+  print l         # __str__: LimitedStack
 
 
 
-    # data_hiding.py
-    class JustCounter(object):
-        __secretCount = 0    # private variable which is invisiable outside the class
+  # data_hiding.py
+  class JustCounter(object):
+      __secretCount = 0    # private variable which is invisiable outside the class
 
-        def count(self):
-            self.__secretCount += 1
-            print self.__secretCount
+      def count(self):
+          self.__secretCount += 1
+          print self.__secretCount
 
-    counter = JustCounter()
-    counter.count()                                       # 1
-    counter.count()                                       # 2
-    print counter._JustCounter__secretCount               # 2
-    print counter.__secretCount                           # AttributeError
+  counter = JustCounter()
+  counter.count()                                       # 1
+  counter.count()                                       # 2
+  print counter._JustCounter__secretCount               # 2
+  print counter.__secretCount                           # AttributeError
   ```
 
 * [**@staticmethod vs @classmethod**](http://stackoverflow.com/questions/136097/what-is-the-difference-between-staticmethod-and-classmethod-in-python)
@@ -241,16 +241,16 @@ class Connection(object):
   # encoding: utf-8
 
   class A(object):
-    def foo(self,x):
-        print "executing foo(%s,%s)"%(self,x)
+      def foo(self,x):
+          print "executing foo(%s,%s)"%(self,x)
 
-    @classmethod
-    def class_foo(cls,x):
-        print "executing class_foo(%s,%s)"%(cls,x)
+      @classmethod
+      def class_foo(cls,x):
+          print "executing class_foo(%s,%s)"%(cls,x)
 
-    @staticmethod
-    def static_foo(x):
-        print "executing static_foo(%s)"%x    
+      @staticmethod
+      def static_foo(x):
+          print "executing static_foo(%s)"%x    
 
   a=A()
   
