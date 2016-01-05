@@ -238,9 +238,6 @@ class Connection(object):
   print counter.__secretCount                           # AttributeError
   ```
 
-``` 
-  
-```
 
 * [**@staticmethod vs @classmethod**](http://stackoverflow.com/questions/136097/what-is-the-difference-between-staticmethod-and-classmethod-in-python)
   
