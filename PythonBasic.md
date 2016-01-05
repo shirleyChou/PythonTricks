@@ -217,30 +217,11 @@ class Connection(object):
   """
   
   # 2
-  __class__ <type 'type'>
-  __cmp__ <unbound method LimitedStack.__cmp__>
-  __del__ <unbound method LimitedStack.__del__>
-  __delattr__ <slot wrapper '__delattr__' of 'object' objects>
-  __dict__ {'__module__': '__main__', '__del__': <function __del__ at 0x0000000002CABC88>, '__str__': <function __str__ at 0x0000000002CABCF8>, '__cmp__': <function __cmp__ at 0x0000000002CABDD8>, '__repr__': <function __repr__ at 0x0000000002CABD68>,   'push': <function push at 0x0000000002CABE48>, '__doc__': 'fancy stack with limit on stack size', '__init__': <function __init__ at 0x0000000002CABC18>}
-  __doc__ fancy stack with limit on stack size
-  __format__ <method '__format__' of 'object' objects>
-  __getattribute__ <slot wrapper '__getattribute__' of 'object' objects>
-  __hash__ <slot wrapper '__hash__' of 'object' objects>
-  __init__ <unbound method LimitedStack.__init__>
-  __module__ __main__
-  __new__ <built-in method __new__ of type object at 0x000000001E2A0A50>
-  __reduce__ <method '__reduce__' of 'object' objects>
-  __reduce_ex__ <method '__reduce_ex__' of 'object' objects>
-  __repr__ <unbound method LimitedStack.__repr__>
-  __setattr__ <slot wrapper '__setattr__' of 'object' objects>
-  __sizeof__ <method '__sizeof__' of 'object' objects>
-  __str__ <unbound method LimitedStack.__str__>
-  __subclasshook__ <built-in method __subclasshook__ of type object at 0x0000000002762518>
-  __weakref__ <attribute '__weakref__' of 'Stack' objects>
-  empty <unbound method LimitedStack.empty>
-  peek <unbound method LimitedStack.peek>
-  pop <unbound method LimitedStack.pop>
-  push <unbound method LimitedStack.push>
+  import inspect
+  print [attr for attr, value in inspect.getmembers(LimitedStack)]
+  """
+  ['__class__', '__cmp__', '__del__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__',    '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__',       '__weakref__', 'empty', 'peek', 'pop', 'push']
+  """
   ```
 
 * [\_\_str__ & \_\_repr__](http://stackoverflow.com/questions/1436703/difference-between-str-and-repr-in-python)
