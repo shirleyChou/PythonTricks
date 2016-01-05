@@ -12,7 +12,7 @@ The idea is that you don't need a type in order to invoke an existing method on 
 
 #### Generators
 ```python
-# the creation of generator. method 2:
+# the creation of generator.
 def fib():
     a, b = 0, 1
     while True:
