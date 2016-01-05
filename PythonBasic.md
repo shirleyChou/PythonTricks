@@ -211,8 +211,8 @@ class Connection(object):
   ```
 
 * built-in functions hasattr/getattr/delattr/setattr used in class    
-  these method can check whether instance variables exist or not
   ``` python 
+  # these method can check whether instance variables exist or not
   print hasattr(f, 'items')   # True   
   print hasattr(l, 'items')   # True
   print getattr(l, 'limit')   # 2
