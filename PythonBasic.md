@@ -10,6 +10,23 @@ It is a term used in dynamic languages that do not have strong typing.
 
 The idea is that you don't need a type in order to invoke an existing method on an object - if a method is defined on it, you can invoke it.
 
+#### Generators
+```python
+# the creation of generator. method 2:
+def fib():
+    a, b = 0, 1
+    while True:
+        yield a
+        a, b = b, a+b
+
+for i in fib():
+    # We must have a stopping condiiton since the generator returns an infinite stream
+    if i > 1000:
+        break
+    print i,
+# 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
+```
+
 #### Decorators
 
 This mechanism is useful for separating concerns and avoiding external un-relatedlogic ‘polluting’ the core logic of the function or method.     
