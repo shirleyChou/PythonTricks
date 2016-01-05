@@ -240,3 +240,18 @@ print hash(fs)
 
 - defaultdict
 - [Counter](http://www.pythoner.com/205.html)
+
+
+
+### Comprehensions Magic
+
+``` python
+# create generator.
+print (x*x for x in range(5))
+# <generator object <genexpr> at 0x0000000002CC8510>
+
+# create set
+print {x for x in range(10)}
+# set([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+```
+
