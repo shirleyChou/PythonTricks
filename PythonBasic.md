@@ -140,7 +140,8 @@ class Connection(object):
 
 
 * **inheritance**
- 
+
+
   ``` python
   # class_and_inheritance.py
   
