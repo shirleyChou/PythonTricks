@@ -29,7 +29,7 @@ for i in fib():
 
 #### Decorators
 
-This mechanism is useful for separating concerns and avoiding external un-relatedlogic ‘polluting’ the core logic of the function or method.     
+Decorators are a type of HOF that take a function and return a wrapped function that provides additional useful properties.    
 
 #### [Descriptor](https://docs.python.org/2/howto/descriptor.html?highlight=descriptor%20protocol)
 
