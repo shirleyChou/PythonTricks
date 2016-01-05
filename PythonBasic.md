@@ -144,6 +144,7 @@ class Connection(object):
 
 * **inheritance**
 
+
   ``` python
   # class_and_inheritance.py
   
@@ -245,6 +246,7 @@ class Connection(object):
   ```
   
 * [special attributes of functions and class](https://docs.python.org/2/reference/datamodel.html)
+
   ```python
   # docstring of the class
   print "LimitedStack.__doc__:", LimitedStack.__doc__   
