@@ -10,9 +10,6 @@ It is a term used in dynamic languages that do not have strong typing.
 
 The idea is that you don't need a type in order to invoke an existing method on an object - if a method is defined on it, you can invoke it.
 
-#### Iterators
-
-
 
 #### Decorators
 
@@ -301,7 +298,7 @@ class Connection(object):
     
     ![classmethod](https://github.com/shirleyChou/PythonTricks/blob/master/Res/trans-classmethod-staticmethod-1.png?raw=true)
 
-``` python
+  ``` python
 
   # encoding: utf-8
 
@@ -346,7 +343,7 @@ class Connection(object):
   # static_foo expects 1 argument, and a.static_foo expects 1 argument too.
   print(a.static_foo)
   # <function static_foo at 0xb7d479cc>
-```
+  ```
 
 * [class descriptors](http://stackoverflow.com/questions/944592/best-practice-for-python-assert)
   
