@@ -65,7 +65,25 @@ print x
 # [4, 5, 6]
 # [1, 2, 3]
 ```
+##### pure functions
+Functions are pure if they do not have any side effects(likes changing the value of input) and do not depend on global variables. Pure functions are similar to mathematical functions - each time the same input is given, the same output will be returned.
+```python
+def f1(x, y=[]):
+    """Never give an empty list or other mutable structure as a default."""
+    y.append(x)
+    return sum(y)
 
+# Here is the correct Python idiom
+
+def f2(x, y=None):
+    """Check if y is None - if so make it a list."""
+    if y is None:
+        y = []
+    y.append(x)
+    return sum(y)
+```
+##### Recursion function
+A recursive function is one that calls itself. Recursive functions are extremely useful examples of the divide-and-conquer paradigm in algorithm development and are a direct expression of finite diffference equations. However, they can be computationally inefficient and their use in Python is quite rare in practice.
 
 #### Classes
 
