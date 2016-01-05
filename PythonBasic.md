@@ -359,10 +359,9 @@ class Connection(object):
   ```
   
 * [class descriptors](http://stackoverflow.com/questions/944592/best-practice-for-python-assert)
-
-Decorators are a type of HOF that take a function and return a wrapped function that provides additional useful properties. Two links:
-* https://docs.python.org/2/howto/descriptor.html?highlight=descriptor%20protocol)
-* http://stackoverflow.com/questions/3798835/understanding-get-and-set-and-python-descriptors
+  * Decorators are a type of HOF that take a function and return a wrapped function that provides additional useful properties. Two links:
+  * https://docs.python.org/2/howto/descriptor.html?highlight=descriptor%20protocol)
+  * http://stackoverflow.com/questions/3798835/understanding-get-and-set-and-python-descriptors
 
   ``` python
   class LessThanZeroException(Exception):
