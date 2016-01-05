@@ -18,7 +18,8 @@ The idea is that you don't need a type in order to invoke an existing method on 
 
 This mechanism is useful for separating concerns and avoiding external un-relatedlogic ‘polluting’ the core logic of the function or method.     
 
-
+#### [Descriptor](https://docs.python.org/2/howto/descriptor.html?highlight=descriptor%20protocol)
+and also: http://stackoverflow.com/questions/3798835/understanding-get-and-set-and-python-descriptors
 
 #### Errors and Exceptions
 
@@ -99,6 +100,8 @@ def f2(x, y=None):
 A recursive function is one that calls itself. Recursive functions are extremely useful examples of the divide-and-conquer paradigm in algorithm development and are a direct expression of finite diffference equations. However, they can be computationally inefficient and their use in Python is quite rare in practice.
 
 #### Classes
+[wait to read](http://intermediatepythonista.com/classes-and-objects)
+ 
 
 * **class variable**: a variable that is shared by all instances of a class. Classvariables are defined within a class but outside any of the class's methods.Class variables are not used as frequently as instance variables are.
 * **instance variable**: A variable that is defined inside a method and belongs only to the current instance of a class.
@@ -225,7 +228,6 @@ class Connection(object):
   ```
 
 * [\_\_str__ & \_\_repr__](http://stackoverflow.com/questions/1436703/difference-between-str-and-repr-in-python)
-  * 
   ```python
   # the function of __repr__ and __str__
   print repr(l)   # __repr__: LimitedStack
