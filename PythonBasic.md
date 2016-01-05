@@ -220,7 +220,7 @@ class Connection(object):
   import inspect
   print [attr for attr, value in inspect.getmembers(LimitedStack)]
   """
-  ['__class__', '__cmp__', '__del__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__',       '__weakref__', 'empty', 'peek', 'pop', 'push']
+  ['__class__', '__cmp__', '__del__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'empty', 'peek', 'pop', 'push']
   """
   ```
 
