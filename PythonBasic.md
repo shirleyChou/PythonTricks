@@ -210,7 +210,7 @@ class Connection(object):
   print l         # __str__: LimitedStack
   ```
 
-* built-in functions hasattr/getattr/delattr/setattr used in class
+* built-in functions hasattr/getattr/delattr/setattr used in class    
   these method can check whether instance variables exist or not
   ``` python 
   print hasattr(f, 'items')   # True   
