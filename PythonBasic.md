@@ -140,45 +140,45 @@ class Connection(object):
 
 
   ``` python
-    # class_and_inheritance.py
+  # class_and_inheritance.py
 
-    class Stack(object):
-        "A well-known data structure..."
-        def __init__(self):
-            self.items = []
+  class Stack(object):
+      "A well-known data structure..."
+      def __init__(self):
+          self.items = []
 
-        def push(self, x):
-            self.items.append(x)
+      def push(self, x):
+          self.items.append(x)
 
-        def pop(self):
-            x = self.items[-1]
-            del self.items[-1]
-            return x
+      def pop(self):
+          x = self.items[-1]
+          del self.items[-1]
+          return x
 
-        def empty(self):
-            return len(self.items) == 0
-
-
-    class FancyStack(Stack): 
-        """stack with added ability to inspect inferior stack items"""
-
-        def peek(self, n):
-            size = len(self.items)
-            assert 0 <= n < size
-            return self.items[size-1-n]
+      def empty(self):
+          return len(self.items) == 0
 
 
-    class LimitedStack(FancyStack):  
-        """fancy stack with limit on stack size"""
+  class FancyStack(Stack): 
+      """stack with added ability to inspect inferior stack items"""
 
-        def __init__(self, limit):
-            # __init__ would overwrite parent class if no FancyStack.__init__(self)
-            self.limit = limit
-            super(LimitedStack, self).__init__()   # base class constructor
+      def peek(self, n):
+          size = len(self.items)
+          assert 0 <= n < size
+          return self.items[size-1-n]
 
-        def __str__(self):
-            # return the description of a class
-            return '__str__: ' + LimitedStack.__name__
+
+  class LimitedStack(FancyStack):  
+      """fancy stack with limit on stack size"""
+
+      def __init__(self, limit):
+          # __init__ would overwrite parent class if no FancyStack.__init__(self)
+          self.limit = limit
+          super(LimitedStack, self).__init__()   # base class constructor
+
+      def __str__(self):
+          # return the description of a class
+          return '__str__: ' + LimitedStack.__name__
 
         def __repr__(self):
             return '__repr__: ' + LimitedStack.__name__
