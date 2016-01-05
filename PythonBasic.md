@@ -200,31 +200,55 @@ class Connection(object):
   
   f = FancyStack()
   l = LimitedStack(2)
-  
-  print hasattr(f, 'items')   # True   
-  print hasattr(l, 'items')   # True
-  print getattr(l, 'limit')   # 2
-  # also delattr, setattr
-  
-  
-  # docstring of the class
-  print "LimitedStack.__doc__:", LimitedStack.__doc__     
-  print "FancyStack.__dict__:", FancyStack.__dict__
-  print "LimitedStack.__name__:", LimitedStack.__name__    # LimitedStack
-  # Module name in which the class is defined. This attribute is "__main__" in interactive mode.
-  print "LimitedStack.__module__:", LimitedStack.__module__   # __main__
-  # Containing the base class
-  print "LimitedStack.__bases__:", LimitedStack.__bases__
-  
-  
+  ```
+
+* [\_\_str__ & \_\_repr__](http://stackoverflow.com/questions/1436703/difference-between-str-and-repr-in-python)
+  ```python
   # the function of __repr__ and __str__
   print repr(l)   # __repr__: LimitedStack
   print str(l)    # __str__: LimitedStack
   print l         # __str__: LimitedStack
+  ```
+
+* built-in functions hasattr/getattr/delattr/setattr used in class
+  these method can check whether instance variables exist or not
+  ``` python 
+  print hasattr(f, 'items')   # True   
+  print hasattr(l, 'items')   # True
+  print getattr(l, 'limit')   # 2
+  # also delattr, setattr
+  ```
+  
+* [special attributes of functions and class](https://docs.python.org/2/reference/datamodel.html)
+  ```python
+  # docstring of the class
+  print "LimitedStack.__doc__:", LimitedStack.__doc__   
+  # LimitedStack.__doc__: fancy stack with limit on stack size
   
   
+  # pass
+  print "FancyStack.__dict__:", FancyStack.__dict__
+  # FancyStack.__dict__: {'peek': <function peek at 0x0000000002B3BBA8>, '__module__': '__main__', '__doc__': 'stack with added     ability to inspect inferior   stack items'}
   
-  # data_hiding.py
+  
+  # Module name in which the class is defined. This attribute is "__main__" in interactive mode.
+  print "LimitedStack.__name__:", LimitedStack.__name__    
+  # LimitedStack.__name__: LimitedStack
+  
+ 
+  # pass
+  print "LimitedStack.__module__:", LimitedStack.__module__   
+  # LimitedStack.__module__: __main__
+  
+  
+  # Containing the base class
+  print "LimitedStack.__bases__:", LimitedStack.__bases__
+  LimitedStack.__bases__: (<class '__main__.FancyStack'>,)
+  ```
+  
+  
+* data_hiding
+  ```python
   class JustCounter(object):
       __secretCount = 0    # private variable which is invisiable outside the class
   
