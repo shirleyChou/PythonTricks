@@ -10,15 +10,12 @@ It is a term used in dynamic languages that do not have strong typing.
 
 The idea is that you don't need a type in order to invoke an existing method on an object - if a method is defined on it, you can invoke it.
 
-#### Iterators
-
-
-
 #### Decorators
 
 This mechanism is useful for separating concerns and avoiding external un-relatedlogic ‘polluting’ the core logic of the function or method.     
 
 #### [Descriptor](https://docs.python.org/2/howto/descriptor.html?highlight=descriptor%20protocol)
+
 and also: http://stackoverflow.com/questions/3798835/understanding-get-and-set-and-python-descriptors
 
 #### Errors and Exceptions
@@ -100,8 +97,10 @@ def f2(x, y=None):
 A recursive function is one that calls itself. Recursive functions are extremely useful examples of the divide-and-conquer paradigm in algorithm development and are a direct expression of finite diffference equations. However, they can be computationally inefficient and their use in Python is quite rare in practice.
 
 #### Classes
+
 [wait to read](http://intermediatepythonista.com/classes-and-objects)
- 
+
+
 
 * **class variable**: a variable that is shared by all instances of a class. Classvariables are defined within a class but outside any of the class's methods.Class variables are not used as frequently as instance variables are.
 * **instance variable**: A variable that is defined inside a method and belongs only to the current instance of a class.
@@ -144,68 +143,69 @@ class Connection(object):
 
 * **inheritance**
 
-
-  ``` python
+``` python
   # class_and_inheritance.py
-  
+
   class Stack(object):
       "A well-known data structure..."
       def __init__(self):
           self.items = []
-  
+
       def push(self, x):
           self.items.append(x)
-  
+
       def pop(self):
           x = self.items[-1]
           del self.items[-1]
           return x
-  
+
       def empty(self):
           return len(self.items) == 0
-  
-  
+
+
   class FancyStack(Stack): 
       """stack with added ability to inspect inferior stack items"""
-  
+
       def peek(self, n):
           size = len(self.items)
           assert 0 <= n < size
           return self.items[size-1-n]
-  
-  
+
+
   class LimitedStack(FancyStack):  
       """fancy stack with limit on stack size"""
-  
+
       def __init__(self, limit):
           # __init__ would overwrite parent class if no FancyStack.__init__(self)
           self.limit = limit
           super(LimitedStack, self).__init__()   # base class constructor
-          
+
       def __del__(self):
           """Destructor"""
           pass
-  
+
       def __str__(self):
           # return the description of a class
           return '__str__: ' + LimitedStack.__name__
-  
+
       def __repr__(self):
           return '__repr__: ' + LimitedStack.__name__
-        
+
       def __cmp__(self):
           """Object comparison. Sample Call: cmp(obj, x)"""
             pass
-  
+
       def push(self, x):
           assert len(self.items) < self.limit
           super(LimitedStack, self).push(x)    # "super" method call
-  
+
   f = FancyStack()
   l = LimitedStack(2)
-  ```
+```
+
 * [object's properties](http://stackoverflow.com/questions/1251692/how-to-enumerate-an-objects-properties-in-python)
-  ```python
+  
+  ``` python
   # 1
   for property, value in vars(theObject).iteritems():
     print property, ": ", value
@@ -227,17 +227,19 @@ class Connection(object):
   ['__class__', '__cmp__', '__del__', '__delattr__', '__dict__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'empty', 'peek', 'pop', 'push']
   """
   ```
-
-* [\_\_str__ & \_\_repr__](http://stackoverflow.com/questions/1436703/difference-between-str-and-repr-in-python)
-  ```python
+  
+* [\_\_str\_\_ & \_\_repr\_\_](http://stackoverflow.com/questions/1436703/difference-between-str-and-repr-in-python)
+  
+  ``` python
   # the function of __repr__ and __str__
   print repr(l)   # __repr__: LimitedStack
   print str(l)    # __str__: LimitedStack
   print l         # __str__: LimitedStack
   ```
-
+  
 * built-in functions hasattr/getattr/delattr/setattr used in class    
-  ``` python 
+  
+  ``` python
   # these method can check whether instance variables exist or not
   print hasattr(f, 'items')   # True   
   print hasattr(l, 'items')   # True
@@ -247,36 +249,35 @@ class Connection(object):
   
 * [special attributes of functions and class](https://docs.python.org/2/reference/datamodel.html)
 
-
-  ```python
+``` python
   # docstring of the class
   print "LimitedStack.__doc__:", LimitedStack.__doc__   
   # LimitedStack.__doc__: fancy stack with limit on stack size
-  
-  
+
+
   # pass
   print "FancyStack.__dict__:", FancyStack.__dict__
   # FancyStack.__dict__: {'peek': <function peek at 0x0000000002B3BBA8>, '__module__': '__main__', '__doc__': 'stack with added     ability to inspect inferior   stack items'}
-  
-  
+
+
   # Module name in which the class is defined. This attribute is "__main__" in interactive mode.
   print "LimitedStack.__name__:", LimitedStack.__name__    
   # LimitedStack.__name__: LimitedStack
-  
- 
+
+
   # pass
   print "LimitedStack.__module__:", LimitedStack.__module__   
   # LimitedStack.__module__: __main__
-  
-  
+
+
   # Containing the base class
   print "LimitedStack.__bases__:", LimitedStack.__bases__
   LimitedStack.__bases__: (<class '__main__.FancyStack'>,)
-  ```
-  
-  
+```
+
 * data_hiding
-  ```python
+  
+  ``` python
   class JustCounter(object):
       __secretCount = 0    # private variable which is invisiable outside the class
   
@@ -290,7 +291,7 @@ class Connection(object):
   print counter._JustCounter__secretCount               # 2
   print counter.__secretCount                           # AttributeError
   ```
-
+  
 * [**@staticmethod vs @classmethod**](http://stackoverflow.com/questions/136097/what-is-the-difference-between-staticmethod-and-classmethod-in-python)
   
   * **With classmethods**, the class of the object instance is implicitly passed as the first argument instead of self. In fact, if you define something to be a classmethod, it is probably because you intend to call it from the class rather than from a class instance.
