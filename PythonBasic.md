@@ -141,7 +141,8 @@ class Connection(object):
 
 * **inheritance**
 
-``` python
+
+  ``` python
   # class_and_inheritance.py
 
   class Stack(object):
@@ -199,7 +200,7 @@ class Connection(object):
 
   f = FancyStack()
   l = LimitedStack(2)
-```
+  ```
 
 * [object's properties](http://stackoverflow.com/questions/1251692/how-to-enumerate-an-objects-properties-in-python)
   
@@ -246,6 +247,7 @@ class Connection(object):
   ```
   
 * [special attributes of functions and class](https://docs.python.org/2/reference/datamodel.html)
+
 
   ``` python
   # docstring of the class
