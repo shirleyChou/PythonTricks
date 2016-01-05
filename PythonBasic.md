@@ -247,7 +247,7 @@ class Connection(object):
   
 * [special attributes of functions and class](https://docs.python.org/2/reference/datamodel.html)
 
-``` python
+  ``` python
   # docstring of the class
   print "LimitedStack.__doc__:", LimitedStack.__doc__   
   # LimitedStack.__doc__: fancy stack with limit on stack size
@@ -271,7 +271,7 @@ class Connection(object):
   # Containing the base class
   print "LimitedStack.__bases__:", LimitedStack.__bases__
   LimitedStack.__bases__: (<class '__main__.FancyStack'>,)
-```
+  ```
 
 * data_hiding
   
