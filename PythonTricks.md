@@ -170,9 +170,9 @@ for x in x_iter:
   ```python
   # The method startswith() checks whether string starts with str, optionally restricting the matching with the given indices start and end.
   str = "this is string example....wow!!!";
-  print str.startswith( 'this' )             # True
-  print str.startswith( 'is', 2, 4 )         # True
-  print str.startswith( 'this', 2, 4 )       # False
+  print str.startswith('this')             # True
+  print str.startswith('is', 2, 4)         # True
+  print str.startswith('this', 2, 4)       # False
   
   ```
 
