@@ -160,11 +160,21 @@ for x in x_iter:
 ### Data Structure
 
 #### String Magic
+* str.replace(target, new)
+  ``` python
+  >>> a = "ABC defg"
+  >>> print(a.replace('de','A'))   # ABC Afg
+  ```
 
-``` python
->>> a = "ABC defg"
->>> print(a.replace('de','A'))   # ABC Afg
-```
+* str.startswith(str, beg=0, end=len(string))
+  ```python
+  # The method startswith() checks whether string starts with str, optionally restricting the matching with the given indices start and end.
+  str = "this is string example....wow!!!";
+  print str.startswith( 'this' )             # True
+  print str.startswith( 'is', 2, 4 )         # True
+  print str.startswith( 'this', 2, 4 )       # False
+  
+  ```
 
 #### 用dict实现switch..case语法
 
