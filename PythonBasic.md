@@ -5,7 +5,7 @@
 ---
 #### output
 格式化字符串时，Python使用一个字符串作为模板。模板中有格式符，这些格式符为真实值预留位置，并说明真实数值应该呈现的格式。格式符有如下几种：
-> %s 字符串(采用str()的显示)
+> %s 字符串(采用str()的显示)    
 > %r 字符串 (采用repr()的显示)
 
 #### [Duck typing](http://stackoverflow.com/questions/4205130/what-is-duck-typing)
