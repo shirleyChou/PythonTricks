@@ -3,7 +3,7 @@
 ​Recap the basic knowledges of Python :smile:
 
 ---
-#### output
+#### Output
 格式化字符串时，Python使用一个字符串作为模板。模板中有格式符，这些格式符为真实值预留位置，并说明真实数值应该呈现的格式。格式符有如下几种：
 > %s 字符串 (采用str()的显示)    
 > %r 字符串 (采用repr()的显示)    
@@ -15,15 +15,25 @@
 > %f 浮点数
 
 同时可以用如下的方式，对格式进行进一步的控制：
-> %[(name)][flags][width][precision][typecode]    
+> %[(name)][flags][width].[precision]typecode    
 
-* name - 变量名
+* name - 命名
 * flags
   * +: 右对齐    
   * -: 左对齐    
   * ' ': 为一个空格，表示在正数的左侧填充一个空格，从而与负数对齐
   * 0: 使用0填充
+* width - 宽度
+* precision - 小数点后精度
+```python
+# example
+print("%+10x" % 10)   # +a
+print("%04d" % 5)     # 0005
+print("%6.3f" % 2.3)  # 2.300 
 
+# 上面的width, precision为两个整数。我们可以利用*，来动态代入这两个量。如下*实际上用4替换。
+print("%.*f" % (4, 1.2))  # 1.2000 
+```
 
 #### [Duck typing](http://stackoverflow.com/questions/4205130/what-is-duck-typing)
 
